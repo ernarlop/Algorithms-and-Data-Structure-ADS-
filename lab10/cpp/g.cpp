@@ -64,8 +64,8 @@ int main() {
         return 0;
     }
     // 2) the edge we delete must be on this cycle, so try each of them
-    for (auto [u, v] : cycle)
-        if (acyclic_without(u, v)) {
+    for (int k = 0; k < (int)cycle.size(); k++)
+        if (acyclic_without(cycle[k].first, cycle[k].second)) {
             cout << "YES";
             return 0;
         }

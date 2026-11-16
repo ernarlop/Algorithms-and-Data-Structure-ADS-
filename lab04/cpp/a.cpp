@@ -1,9 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-struct Node { int x; Node *l = 0, *r = 0; };
+struct Node {
+    int x;
+    Node *l, *r;
+    Node(int v) { x = v; l = r = NULL; }
+};
 void ins(Node*& t, int x, int d = 0) {
     if (d > 100) return; // глубже 100 не нужно
-    if (!t) t = new Node{x};
+    if (!t) t = new Node(x);
     else if (x <= t->x) ins(t->l, x, d + 1);
     else ins(t->r, x, d + 1);
 }

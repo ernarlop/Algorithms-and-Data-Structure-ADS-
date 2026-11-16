@@ -2,7 +2,7 @@
 using namespace std;
 int main() {
     int n, ops = 0; long long m, x; cin >> n >> m;
-    priority_queue<long long, vector<long long>, greater<>> q; // min-куча
+    priority_queue<long long, vector<long long>, greater<long long>> q; // min-куча
     while (n--) cin >> x, q.push(x);
     while (q.size() > 1 && q.top() < m) { // мешаем две самые слабые
         long long a = q.top(); q.pop();

@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-struct Node { int x; Node *l = 0, *r = 0; };
-void ins(Node*& t, int x) { if (!t) t = new Node{x}; else if (x < t->x) ins(t->l, x); else if (x > t->x) ins(t->r, x); }
+struct Node {
+    int x;
+    Node *l, *r;
+    Node(int v) { x = v; l = r = NULL; }
+};
+void ins(Node*& t, int x) { if (!t) t = new Node(x); else if (x < t->x) ins(t->l, x); else if (x > t->x) ins(t->r, x); }
 int ans;
 int h(Node* t) {
     if (!t) return 0;

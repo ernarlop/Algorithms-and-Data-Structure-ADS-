@@ -18,12 +18,14 @@ int main() {
     int x = -1;
     for (int round = 0; round < n; round++) {
         x = -1;
-        for (auto [u, v, w] : edges)
+        for (int k = 0; k < (int)edges.size(); k++) {
+            int u = edges[k][0], v = edges[k][1], w = edges[k][2];
             if (dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
                 par[v] = u;
                 x = v;
             }
+        }
         if (x == -1) break; // nothing changed -> no negative cycle
     }
 

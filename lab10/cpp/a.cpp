@@ -19,7 +19,7 @@ int main() {
     int dx[4] = {1, -1, 0, 0}, dy[4] = {0, 0, 1, -1};
     int time = 0;
     while (!q.empty()) {
-        auto [i, j] = q.front();
+        int i = q.front().first, j = q.front().second;
         q.pop();
         time = t[i][j];
         for (int d = 0; d < 4; d++) {

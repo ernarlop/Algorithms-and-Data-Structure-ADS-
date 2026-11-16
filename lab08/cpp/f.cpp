@@ -39,7 +39,9 @@ int main() {
         cin >> L[i] >> R[i];
         by_len[R[i] - L[i] + 1];
     }
-    for (auto& [len, v] : by_len) {
+    for (auto& it : by_len) {
+        int len = it.first;
+        vector<long long>& v = it.second;
         for (int i = 0; i + len <= n; i++) v.push_back(get(i, i + len));
         sort(v.begin(), v.end());
     }

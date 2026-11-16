@@ -11,14 +11,17 @@ vector<long long> dijkstra(int src) {
     priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq;
     pq.push({0, src});
     while (!pq.empty()) {
-        auto [d, u] = pq.top();
+        long long d = pq.top().first;
+        int u = pq.top().second;
         pq.pop();
         if (d > dist[u]) continue;
-        for (auto [v, w] : adj[u])
+        for (int k = 0; k < (int)adj[u].size(); k++) {
+            int v = adj[u][k].first, w = adj[u][k].second;
             if (d + w < dist[v]) {
                 dist[v] = d + w;
                 pq.push({dist[v], v});
             }
+        }
     }
     return dist;
 }

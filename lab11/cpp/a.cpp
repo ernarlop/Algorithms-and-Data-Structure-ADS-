@@ -24,7 +24,8 @@ int main() {
     for (int i = 0; i <= n + 1; i++) nxt[i] = i;
 
     long long total = 0;
-    for (auto [c, l, r] : segs) {
+    for (int s = 0; s < m; s++) {
+        long long c = segs[s][0], l = segs[s][1], r = segs[s][2];
         int i = find(l);
         while (i < r) {
             total += c;     // join i and i+1 with cost c

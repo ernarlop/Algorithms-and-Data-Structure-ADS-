@@ -19,7 +19,7 @@ int main() {
             queue<pair<int, int>> q;
             q.push({i, j});
             while (!q.empty()) {
-                auto [a, b] = q.front();
+                int a = q.front().first, b = q.front().second;
                 q.pop();
                 for (int d = 0; d < 4; d++) {
                     int x = a + dx[d], y = b + dy[d];

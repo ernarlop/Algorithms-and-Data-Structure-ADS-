@@ -42,7 +42,7 @@ int main() {
     // Kruskal: take the cheapest roads that connect new parts
     sort(edges.begin(), edges.end());
     long long total = 0;
-    for (auto [w, a, b] : edges)
-        if (unite(a, b)) total += w;
+    for (int i = 0; i < m; i++)
+        if (unite(edges[i][1], edges[i][2])) total += edges[i][0];
     cout << total;
 }
