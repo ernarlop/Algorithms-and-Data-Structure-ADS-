@@ -16,7 +16,8 @@ for _ in range(n):
         if dist[u] + w < dist[v]:
             dist[v] = dist[u] + w
             par[v] = u
-            x = v
+            if x == -1:  # remember the first vertex that improved in this round
+                x = v
     if x == -1:  # nothing changed -> no negative cycle
         break
 

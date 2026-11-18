@@ -23,7 +23,7 @@ int main() {
             if (dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
                 par[v] = u;
-                x = v;
+                if (x == -1) x = v; // remember the first vertex that improved in this round
             }
         }
         if (x == -1) break; // nothing changed -> no negative cycle
